@@ -42,3 +42,8 @@ body {
 	z-index: 200;
 	pointer-events: none;
 }
+
+svg {
+	width: 10px !important;
+	height: 10px !important;
+}

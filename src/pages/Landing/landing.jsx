@@ -1,7 +1,6 @@
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import BuildImage from "../../assets/images/playtobuild.png";
 import "./landing.scss";
-// import Globe from "../../assets/images/globe.svg";
 import Play from "../../assets/images/play.svg";
 import Earn from "../../assets/images/card.svg";
 import Connect from "../../assets/images/connect.svg";
@@ -23,12 +22,10 @@ import LoadMap from "./components/LoadMap";
 import Community from "./components/Community";
 import {React} from "react";
 import { NavLink } from "react-router-dom";
-
-
-
-
+import { motion } from "framer-motion";
 
 export function Landing() {
+  
   return (    
     <>
       <Header />
@@ -51,7 +48,7 @@ export function Landing() {
                 <div className="GlobeImg position-relative text-center">
                   <div className="backgroundShadow"></div>
                  
-                  <iframe src="/earth.htm" width="100%" height="550" title="Earth"></iframe>
+                  <iframe src="/earth.htm" width="100%" height="650px" title="Earth"></iframe>
                 </div>
               </Col>
             </Row>
@@ -129,7 +126,13 @@ export function Landing() {
               </Col>
               <Col sm={12} lg={6} xl={6}>
                 <div className="position-relative text-center">
-                  <img src={BuildImage} alt="" />
+                  <motion.img
+                    drag
+                    dragTransition={{
+                      min: 0,
+                      max: 100,
+                      bounceStiffness: 100
+                    }}src={BuildImage} alt="" />
                 </div>
               </Col>
             </Row>
